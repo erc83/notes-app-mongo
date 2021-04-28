@@ -16,7 +16,7 @@ app.engine(
     exphbs({
         defaultLayout: "Main",
         layoutsDir: path.join(app.get('views'), 'layouts'),
-        partialsDir: path.join(app.get('views'), 'partials'),
+        partialsDir: path.join(app.get('views'), 'components'),
         extname: '.hbs',
 })
 );
@@ -45,8 +45,8 @@ require('./database')
 
 //Routes
 app.use(require('./routes/index'));
-app.use(('/notes'), require('./routes/notes'));
-app.use(('/users'), require('./routes/users'));
+app.use('/notes', require('./routes/notes'));
+app.use('/users', require('./routes/users'));
 
 
 
