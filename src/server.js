@@ -7,6 +7,7 @@ const session = require('express-session');
 const cors = require("cors");
 // Inicializacciones
 const app = express();
+require('./database')
 
 //Setting
 app.set("port", process.env.PORT || 3000);
@@ -26,16 +27,16 @@ app.set("view engine", ".hbs")
 const log = console.log;
 
 //Middlewares
-app.use(cors());
 app.use(express.urlencoded({extended: false}));
+app.use(express.json());
 app.use(methodOverride('_method'));
+app.use(cors());
 app.use(session({
     secret:'mysecretapp',
     resave: true,
     saveUninitialized: true
 }))
 
-require('./database')
 
 
 

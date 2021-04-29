@@ -1,13 +1,13 @@
 const express = require('express');
 const router = express.Router();
 
-
+const Note = require('../models/model-note');
 
 router.get('/add', (req, res) => {
     res.render('notes/new-note');
 });
 
-router.post('/new-note', (req, res) => {
+router.post('/new-note', async (req, res) => {
     const {title, description} = req.body
     const errors = []
     if(!title) {
@@ -24,12 +24,19 @@ router.post('/new-note', (req, res) => {
                 description
         });
     }else{
-        res.send('ok');
+        const newNote = new Note({ title, description });
+        await newNote.save();
+        res.redirect('/notes/notes')
     }
 });
 
-
-
+router.get('/notes', async (req, res) => {
+    const notes = await Note.find().sort({date: 'desc'});
+    // console.log(notes.map(note=> note.toJSON()))
+    res.render('notes/all-notes', {
+        notes: notes.map(note => note.toJSON())
+    } );
+});
 
 
 
