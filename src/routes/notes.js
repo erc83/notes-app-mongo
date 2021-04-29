@@ -38,6 +38,24 @@ router.get('/notes', async (req, res) => {
     } );
 });
 
+router.get('/edit/:id', async (req, res) => {
+    const note = await Note.findById(req.params.id)
+    res.render('notes/edit-note', {
+        note: note.toJSON()
+    });
+});
+
+router.put("/edit-note/:id", async (req, res) => {
+    const { title, description } = req.body;
+    await Note.findByIdAndUpdate(req.params.id, { title, description});
+    res.redirect('/notes/notes');
+});
+
+router.delete('/delete/:id', async (req, res) => {
+    await Note.findByIdAndDelete(req.params.id);
+    res.redirect("/notes/notes");
+})
+
 
 
 module.exports = router;
