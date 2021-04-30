@@ -1,8 +1,25 @@
+<div class="col-md-4 mx-auto d-flex justify-content-between align-items-cente">
+
+
 {{#if success_msg}}
-    <div class="alert alert-success alert-dismissible fade show" role="alert">
-        {{success_msg}}
-        <button type="button" class="close" data-bs-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-        </button>
-    </div>
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+  <strong>{{success_msg}}</strong>
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
 {{/if}}
+
+{{#if delete_msg}}
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+  <strong>{{delete_msg}}</strong>
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{{/if}}
+
+{{#if error_msg}}
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+  <strong>{{error_msg}}</strong>
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{{/if}}
+
+</div>

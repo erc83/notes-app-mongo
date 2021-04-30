@@ -6,9 +6,11 @@ const methodOverride = require("method-override")
 const session = require('express-session');
 const flash = require('connect-flash');
 const cors = require("cors");
+const passport = require('passport');
 // Inicializacciones
 const app = express();
 require('./database')
+require('./config/passport');
 
 //Setting
 app.set("port", process.env.PORT || 3000);
@@ -23,8 +25,6 @@ app.engine(
 })
 );
 app.set("view engine", ".hbs")
-
-
 const log = console.log;
 
 //Middlewares
@@ -37,12 +37,17 @@ app.use(session({
     resave: true,
     saveUninitialized: true
 }))
+app.use(passport.initialize());
+app.use(passport.session());
 app.use(flash());
 
 //Global Variables
 app.use((req, res, next) => {
     res.locals.success_msg = req.flash('success_msg');
+    res.locals.delete_msg = req.flash('delete_msg');
     res.locals.error_msg = req.flash('error_msg');
+    res.locals.error = req.flash('error');
+    res.locals.user = req.user || null;
 
     next();
 })
@@ -52,11 +57,8 @@ app.use(require('./routes/index'));
 app.use('/notes', require('./routes/notes'));
 app.use('/users', require('./routes/users'));
 
-
-
 //Static Files
 app.use('/public', express.static(path.join(__dirname, 'public')));
-
 
 // Server is listening
 app.listen(app.get("port"), () => {
