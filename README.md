@@ -8,7 +8,7 @@ para ejecutar el proyecto:
     - npm install 
     - modificar el archivo example.env por .env que será un archivo con una variable de entorno,
         dentro de este archivo debes ir a mongodb atlas y obtener una url string y cambiarla por el
-        escrito que esta en commillas.
+        escrito que está en comillas dentro de .env .
 
         // correr el server sin nodemon
     - npm start
@@ -21,12 +21,13 @@ para ejecutar el proyecto:
     - MongoDB database connection established succesfully
     nota: puedes modificar el número de puerto y se actualizará automáticamente numero del puerto
 
-4.- En el navegador ir a la direccion:
+4.- En el navegador ir a la dirección:
 
     - http://localhost:5000
-    si modificas el puerto debes modificar tambien la direccion url del navegador
+    si modificas el puerto debes modificar también la dirección url del navegador
     
-5.- Los principales tecnologias usadas fueron:
+5.- Los principales tecnologías usadas fueron:
+
     - Bootstrap
     - Handlebars
     - Express
@@ -36,4 +37,5 @@ para ejecutar el proyecto:
 6.- Si encuentras algún detalle en que se pueda mejorar favor dejar alguna sugerencia con github. 
 
 7.- Puede visitar mi portafolio en el que fue integrado este proyecto:
+    
     https: 
