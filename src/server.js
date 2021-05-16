@@ -13,7 +13,7 @@ require('./database')
 require('./config/passport');
 
 //Setting
-app.set("port", process.env.PORT || 3000);
+app.set("port", process.env.PORT || 5000);
 app.set("views", path.join(__dirname, "views"));
 app.engine(
     ".hbs", 
@@ -59,6 +59,8 @@ app.use('/users', require('./routes/users'));
 
 //Static Files
 app.use('/public', express.static(path.join(__dirname, 'public')));
+
+
 
 // Server is listening
 app.listen(app.get("port"), () => {
