@@ -16,14 +16,16 @@ para ejecutar el proyecto:
     - npm run dev
 
 3.- Si todo esta correcto debes por la consola de nodejs:
+
     - Server on port 5000
     - MongoDB database connection established succesfully
+    nota: puedes modificar el número de puerto y se actualizará automáticamente numero del puerto
 
 4.- En el navegador ir a la direccion:
 
     - http://localhost:5000
-    nota: puedes modificar el número de puerto y se actualizará automáticamente
-
+    si modificas el puerto debes modificar tambien la direccion url del navegador
+    
 5.- Los principales tecnologias usadas fueron:
     - Bootstrap
     - Handlebars
