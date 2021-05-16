@@ -60,7 +60,9 @@ app.use('/users', require('./routes/users'));
 //Static Files
 app.use('/public', express.static(path.join(__dirname, 'public')));
 
-
+app.get('*', (req, res) => {
+    res.render('Error');
+});
 
 // Server is listening
 app.listen(app.get("port"), () => {

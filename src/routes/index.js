@@ -11,8 +11,6 @@ router.get('/about', (req, res) => {
     res.render('About');
 });
 
-router.get('*', (req, res) => {
-    res.render('Error');
-});
+
 
 module.exports = router;
