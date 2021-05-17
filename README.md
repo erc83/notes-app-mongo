@@ -1,4 +1,4 @@
-para ejecutar el proyecto:
+Para ejecutar el proyecto:
 
 1.- Clonar el repositorio master en tu directorio local.
 
