@@ -19,14 +19,14 @@ para ejecutar el proyecto:
 
     - Server on port 5000
     - MongoDB database connection established succesfully
-    nota: puedes modificar el número de puerto y se actualizará automáticamente numero del puerto
+    nota: puedes modificar el número de puerto y se actualizará automáticamente el mensaje por consola en nodejs.
 
 4.- En el navegador ir a la dirección:
 
     - http://localhost:5000
     si modificas el puerto debes modificar también la dirección url del navegador
     
-5.- Los principales tecnologías usadas fueron:
+5.- Las principales tecnologías usadas fueron:
 
     - Bootstrap
     - Handlebars
