@@ -36,6 +36,5 @@ para ejecutar el proyecto:
 
 6.- Si encuentras algún detalle en que se pueda mejorar favor dejar alguna sugerencia con github. 
 
-7.- Puede visitar mi portafolio en el que fue integrado este proyecto:
-    
-    https: 
+7.- Puede visitar el proyecto en produccion en la direccion de abajo:
+    https://notes-mongo-crud.herokuapp.com/
